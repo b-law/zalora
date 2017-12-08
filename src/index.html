@@ -1,0 +1,78 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./dist/stylesheet/main.css">
+  <title>Zalora</title>
+</head>
+<body>
+  <div class="container">
+    <header id="header">
+      <nav class="header-nav">
+        <ul class="header-nav__list">
+          <li class="header-nav__list-all header-nav__list-one">
+            <img src="./dist/images/menu.svg" alt="menu icon">
+          </li>
+          <li class="header-nav__list-all header-nav__list-two">
+            <img src="./dist/images/icon_loupe-light.svg" alt="search icon">
+          </li>
+          <li class="header-nav__list-all header-nav__list-three">
+            <img src="./dist/images/master_logo.svg" alt="zalora logo">
+          </li>
+          <li class="header-nav__list-all header-nav__list-four">
+            <img src="./dist/images/heart-light.svg" alt="favorite icon">
+          </li>
+          <li class="header-nav__list-all header-nav__list-five">
+            <img src="./dist/images/icon_bag-light.svg" alt="shopping bag icon">
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section id="section">
+      <header class="section-header">
+        <p class="section-header__shipping">Free Shipping above $40 + Cash on Delivery</p>
+        <p class="section-header__list">Women / Clothing / Dresses</p>
+      </header>
+      <article class="section-article">
+        <img class="section-article__dress" src="./dist/images/dress.jpg" alt="dress">
+        <img class="section-article__arrow-left" src="./dist/images/icon_arrow-large-dark-left.svg" alt="arrow left">
+        <img class="section-article__arrow-right" src="./dist/images/icon_arrow-large-dark-right.svg" alt="arrow right">
+      </article>
+      <aside class="section-aside">
+        <p class="section-aside__title" >Blue Wrap Dress</p>
+        <p class="section-aside__price" >59.90 SGD</p>
+        <p class="section-aside__available" >In stock</p>
+        <ul class="section-aside__size">
+          <li class="section-aside__size-title">Size</li>
+          <li class="section-aside__size-select">
+            <span class="section-aside__size-select-title">Choose Size</span>
+            <img class="section-aside__size-select-arrow" src="./dist/images/icon_arrow-large-dark-down.svg" alt="arrow down">
+          </li>
+        </ul>
+        <br>
+        <button id="section-aside__add" type="button" name="button">ADD TO BAG</button>
+        <br>
+        <button class="section-aside__wishlist" type="button" name="button">
+          <img class="section-aside__wishlist-icon" src="./dist/images/heart-dark.svg" alt="heart icon">
+          <span class="section-aside__wishlist-title">ADD TO WISHLIST</span>
+        </button>
+        <div class="section-aside__delivery">
+          <p class="section-aside__delivery-title" >DELIVERED BY <span class="section-aside__delivery-date" >8TH TO 12TH DECEMBER</span></p>
+        </div>
+      </aside>
+      <aside class="section-modal">
+        <div class="section-modal__background"></div>
+        <ul class="section-modal__sizechart">
+          <div class="section-modal__sizechart-choose">Choose Size</div>
+          <li class="section-modal__sizechart-all section-modal__sizechart-s">S</li>
+          <li class="section-modal__sizechart-all section-modal__sizechart-m">M</li>
+          <li class="section-modal__sizechart-all section-modal__sizechart-l">L</li>
+        </ul>
+      </aside>
+    </section>
+  </div>
+  <script src="./dist/script/app.js"></script>
+</body>
+</html>

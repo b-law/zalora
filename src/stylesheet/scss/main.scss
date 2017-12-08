@@ -1,0 +1,327 @@
+//=====================================================================
+//  I M P O R T S
+//=====================================================================
+@import "var";
+@import "mixin";
+
+@font-face {
+    font-family: "Apercu";
+    src: url('/fonts/Apercu/apercu_regular.otf') format('opentype');
+}
+
+
+//=====================================================================
+//  E N T I R E   B O D Y
+//=====================================================================
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0px;
+    padding:0px;
+    overflow-x: hidden;
+    position: relative;
+    background-color: grey;
+}
+
+.container {
+    width: $widthPrimary;
+    height: 860px;
+    @include relative_position_center;
+    background: $colorLightPrimary;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: $fontMain;
+}
+
+
+// Main Header (Navigation Bar)
+#header {
+    background-color: $colorDarkPrimary;
+    width: $widthPrimary;
+    height: auto;
+}
+
+.header-nav__list {
+    margin: 0;
+    list-style-type: none;
+    padding: 5px 0 5px 0;
+}
+
+.header-nav__list-all {
+    display: inline-block;
+}
+
+.header-nav__list-all img {
+    height: 27px;
+    padding: 6px;
+}
+
+.header-nav__list-one,
+.header-nav__list-two {
+    @include transform(translateX(5px));
+}
+
+.header-nav__list-three {
+    @include transform(translateX(33px));
+}
+
+.header-nav__list-four,
+.header-nav__list-five {
+    @include transform(translateX(57px));
+}
+
+
+// Shipping
+.section-header__shipping {
+    display: block;
+    width: $widthPrimary;
+    font-size: $fontsizeS;
+    text-align: center;
+    color: $colorHighlightPositive;
+    background-color: $colorLightSecondary;
+    margin: 0;
+    padding: 2px;
+    font-weight: bold;
+    letter-spacing: $fontSpacing;
+}
+
+// Item Path
+.section-header__list {
+    padding-left: 10px;
+    font-size: $fontsizeS;
+    letter-spacing: $fontSpacing;
+    color: $colorDarkTertiary;
+}
+
+// Item Display
+.section-article {
+    width: $widthPrimary;
+    display: block;
+    position: relative;
+}
+
+.section-article__dress {
+    width: $widthPrimary;
+    display: block;
+    position: relative;
+}
+
+.section-article__arrow-left {
+    @include arrow_slide;
+    left: 2px;
+}
+
+.section-article__arrow-right {
+    @include arrow_slide;
+    right: 2px;
+}
+
+
+// Item Name
+.section-aside__title {
+    text-align: center;
+    font-size: $fontsizeL;
+    font-weight: 400;
+    letter-spacing: $fontSpacingL;
+    color: $colorDarkPrimary;
+    padding: 8px;
+    margin: 10px 0 10px 0;
+}
+
+// Item Price
+.section-aside__price {
+    font-size: $fontsizeS;
+    letter-spacing: $fontSpacing;
+    text-align: center;
+}
+
+// Item Availability
+.section-aside__available {
+    text-align: center;
+    color: $colorHighlightPositive;
+    font-size: $fontsizeM;
+    letter-spacing: $fontSpacing;
+    display: block;
+    position: relative;
+}
+
+
+
+// Item Sizes
+.section-aside__size {
+    color: $colorDarkPrimary;
+    font-size: $fontsizeS;
+    letter-spacing: $fontSpacing;
+    margin-top: 10px;
+    width: $widthPrimary;
+    list-style: none;
+    @include relative_position_center;
+}
+
+.section-aside__size li {
+    display: inline-block;
+}
+
+.section-aside__size-title {
+    margin-right: 26px;
+}
+
+.section-aside__size-select {
+    display: block;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $colorMedium;
+    background-color: $colorLightPrimary;
+    border-radius: 0;
+    padding: 5px;
+    font-size: $fontsizeS;
+    letter-spacing: $fontSpacing;
+    width: 170px;
+    &:hover {
+    cursor: pointer;
+    }
+}
+
+
+.section-aside__size-select-title {
+    padding: 3px;
+}
+
+
+.section-aside__size-select-arrow {
+    width: 10px;
+    margin: 5px;
+    float: right;
+}
+
+// Item Sizes (when none selected upon "Add To Bag")
+
+
+
+// Add to Bag
+#section-aside__add {
+    width: 98%;
+    font-size: $fontsizeM;
+    font-weight: 100;
+    letter-spacing: $fontSpacing;
+    background-color: $colorDarkPrimary;
+    color: $colorLightPrimary;
+    border-radius: 0;
+    padding: 13px;
+    border: none;
+    @include relative_position_center;
+    &:focus {
+    outline: none;
+    }
+    &:hover {
+    cursor: pointer;
+    }
+}
+
+#section-aside__add.active {
+    color: $colorLightPrimary;
+    background-color: $colorHighlightPositive;
+}
+
+.section-aside__size-select-title-tick {
+    @include transform(translate(-10px, 2px));
+    stroke: $colorLightPrimary;
+    stroke-width: 3px;
+    stroke-dasharray: 25.368118286132812px;
+    fill:$colorLightPrimary;
+    @include checkmark;
+}
+
+
+
+// Wishlist
+.section-aside__wishlist {
+    width: 97%;
+    font-size: $fontsizeM;
+    font-weight: 100;
+    letter-spacing: $fontSpacing;
+    color: $colorDarkPrimary;
+    border-radius: 0;
+    padding: 13px;
+    border: none;
+    top: -15px;
+    @include relative_position_center;
+    &:focus {
+    outline: none;
+    }
+}
+
+.section-aside__wishlist-icon {
+    width: 20px;
+    margin-right: 5px;
+    @include transform(translateY(3px));
+}
+
+
+// Delivery Estimation
+.section-aside__delivery {
+    display: block;
+    font-size: $fontsizeM;
+    text-align: center;
+    letter-spacing: $fontSpacing;
+}
+
+.section-aside__delivery-date {
+    color: $colorHighlightPositive;
+}
+
+// Modal
+.section-modal {
+    width: $widthPrimary;
+    @include absolute_position_center;
+    top: 0px;
+    display: none;
+}
+
+.section-modal.active {
+    display: block;
+}
+
+.section-modal__background {
+    width: 300.5px;
+    background-color: $colorDarkPrimary;
+    opacity: 0.7;
+    height: 860px;
+}
+
+.section-modal__sizechart {
+    list-style: none;
+    background-color: $colorLightPrimary;
+    width: 220px;
+    @include box-shadow(3px 4px 36px -4px rgba(0,0,0,0.75));
+    @include fixed_position_center;
+    top: 100px;
+    color: $colorDarkPrimary;
+    font-size: $fontsizeM;
+    padding: 0;
+    letter-spacing: $fontSpacing;
+}
+
+.section-modal__sizechart li {
+    padding: 22px 18px 22px 18px;
+    border-bottom: 1px solid $colorMedium;
+    &:hover {
+    cursor: pointer;
+    }
+}
+
+.section-modal__sizechart-choose {
+    text-align: center;
+    padding: 22px 18px 22px 18px;
+    border-bottom: 1px solid $colorDarkTertiary;
+}
+
+.section-modal__sizechart :last-child {
+    border-bottom: 0;
+}

@@ -1,0 +1,174 @@
+//=======================================================================
+//        O T H E R   M I X I N
+//=======================================================================
+
+
+//----------  W E B K I T S
+//---------------------------------------------------
+
+
+  //----------  1. T r a n s f o r m  ----------------//
+  @mixin transform($args...) {
+    -moz-transform: $args;
+    -o-transform: $args;
+    -ms-transform: $args;
+    -webkit-transform: $args;
+    transform: $args;
+  }
+
+  @mixin transformOrigin($args...) {
+    -moz-transform-origin: $args;
+    -o-transform-origin: $args;
+    -ms-transform-origin: $args;
+    -webkit-transform-origin: $args;
+    transform-origin: $args;
+  }
+
+
+
+
+  //-------------  2. B o x - S h a d o w  ----------------//
+  @mixin box-shadow($shadow){
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow
+  }
+
+
+
+  //----------------  3. M e d i a   Q u e r i e s  ----------------//
+  @mixin mQ($arg) {
+    @media screen and (max-width: $arg) {
+      @content;
+    }
+  }
+
+
+
+
+  //------------------  4. T r a n s i t i o n  -----------------------//
+  // From: http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+  @mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+  }
+
+
+
+
+  //---------------  5. F i l t e r  --------------------------//
+  @mixin filter($args...) {
+  -webkit-filter: $args;
+  filter: $args;
+  }
+
+
+
+
+  //--------------  6. A n i m a t i o n   F r a m e w o r k  -------------------//
+  //Reference: https://www.mrpapercut.com/blog/2016-09-26-keyframe-animations-in-sass
+  @mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+      @content;
+    }
+    @-moz-keyframes #{$animationName} {
+      @content;
+    }
+    @-o-keyframes #{$animationName} {
+      @content;
+    }
+    @keyframes #{$animationName} {
+      @content;
+    }
+  }
+
+  @mixin animate($name, $duration, $iteration, $direction, $fill-mode) {
+    -webkit-animation-duration: $duration;
+       -moz-animation-duration: $duration;
+         -ms-animation-duration: $duration;
+           -o-animation-duration: $duration;
+              animation-duration: $duration;
+    -webkit-animation-iteration-count: $iteration;
+       -moz-animation-iteration-count: $iteration;
+         -ms-animation-iteration-count: $iteration;
+           -o-animation-iteration-count: $iteration;
+              animation-iteration-count: $iteration;
+    -webkit-animation-name: $name;
+       -moz-animation-name: $name;
+         -ms-animation-name: $name;
+           -o-animation-name: $name;
+              animation-name: $name;
+    -webkit-animation-direction: $direction;
+       -moz-animation-direction: $direction;
+         -ms-animation-direction: $direction;
+           -o-animation-direction: $direction;
+              animation-direction: $direction;
+    -webkit-animation-fill-mode: $fill-mode;
+       -moz-animation-fill-mode: $fill-mode;
+         -ms-animation-fill-mode: $fill-mode;
+           -o-animation-fill-mode: $fill-mode;
+              animation-fill-mode: $fill-mode;
+  }
+
+
+  @mixin delay($delay...) {
+    -webkit-animation-delay: $delay;
+    -moz-animation-delay: $delay;
+    -ms-animation-delay: $delay;
+    -o-animation-delay: $delay;
+    animation-delay: $delay;
+  }
+
+  // Check Animation
+  @include keyframes (checkmark) {
+      from {
+          stroke-dashoffset: 25.368118286132812px;
+      }
+      to {
+          stroke-dashoffset: 0px;
+      }
+  }
+
+  @mixin checkmark {
+      @include animate(checkmark, 0.55s, 1, linear, backwards);
+  }
+
+//-------------  P O S I T I O N
+//---------------------------------------------------------------------------
+@mixin absolute_position_center {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+@mixin relative_position_center {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+@mixin fixed_position_center {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin arrow_slide {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  background-color: $colorLightPrimary;
+  border-radius: 50%;
+  padding: 5px;
+  top: 180px;
+}
